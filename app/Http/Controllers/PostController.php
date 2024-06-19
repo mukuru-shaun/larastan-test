@@ -9,8 +9,9 @@ class PostController extends Controller
 {
     public function index(): string
     {
+        /** @var Post $post */
         $post = Post::query()->find(1);
 
-        return $post->user->name;
+        return $post->user?->name ?? '';
     }
 }
